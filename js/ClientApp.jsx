@@ -1,3 +1,6 @@
+import React from 'react';
+import { render } from 'react-dom';
+
 const ce = React.createElement;
 
 const MyTitle = function(props) {
@@ -14,5 +17,7 @@ const MyFirstComponent = function() {
     ce(MyTitle, { title: 'Silicon Valley', color: 'peru' })
   );
 };
+
+const x = 5;
 
 ReactDOM.render(ce(MyFirstComponent), document.getElementById('app'));
