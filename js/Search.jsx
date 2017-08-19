@@ -8,12 +8,11 @@ class Search extends Component {
     this.state = {
       searchTerm: ''
     };
-    this.handleInput = this.handleInput.bind(this);
   }
 
-  handleInput(e) {
+  handleInput = e => {
     this.setState({ searchTerm: e.target.value });
-  }
+  };
 
   render() {
     return (
