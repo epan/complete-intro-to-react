@@ -3,12 +3,9 @@ import preload from '../data.json';
 import ShowCard from './ShowCard';
 
 class Search extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchTerm: ''
-    };
-  }
+  state = {
+    searchTerm: ''
+  };
 
   handleInput = e => {
     this.setState({ searchTerm: e.target.value });
