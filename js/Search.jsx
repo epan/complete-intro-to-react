@@ -3,7 +3,16 @@ import preload from '../data.json';
 
 const Search = () => (
   <div className="search">
-    {preload.shows.map(show => <h3>{show.title}</h3>)}
+    {preload.shows.map(show => (
+      <div className="show-card">
+        <img src={`/public/img/posters/${show.poster}`} alt={`${show.title} Show Poster`} />
+        <div>
+          <h3>{show.title}</h3>
+          <h3>({show.year})</h3>
+          <p>{show.description}</p>
+        </div>
+      </div>
+    ))}
   </div>
 );
 
