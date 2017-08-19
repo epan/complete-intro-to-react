@@ -1,15 +1,25 @@
 import React from 'react';
 import { shape, string } from 'prop-types';
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+  width: 32%;
+  border: 2px solid #333;
+  border-radius: 4px;
+  margin-bottom: 25px;
+  padding-right: 10px;
+  overflow: hidden;
+`;
 
 const ShowCard = props => (
-  <div className="show-card">
+  <Wrapper>
     <img src={`/public/img/posters/${props.show.poster}`} alt={`${props.show.title} Show Poster`} />
     <div>
       <h3>{props.show.title}</h3>
       <h3>({props.show.year})</h3>
       <p>{props.show.description}</p>
     </div>
-  </div>
+  </Wrapper>
 );
 
 ShowCard.propTypes = {
