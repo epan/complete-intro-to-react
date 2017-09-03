@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import ShowCard from './ShowCard';
+import Header from './Header';
 
 type State = { searchTerm: string };
 
@@ -13,17 +14,14 @@ class Search extends Component<Props, State> {
     shows: Array<Show>
   };
 
-  handleInput = (e: SyntheticKeyboardEvent & { target: HTMLInputElement }) => {
+  handleSearchTermChange = (e: SyntheticKeyboardEvent & { target: HTMLInputElement }) => {
     this.setState({ searchTerm: e.target.value });
   };
 
   render() {
     return (
       <div className="search">
-        <header>
-          <h1>{this.state.searchTerm}</h1>
-          <input type="text" placeholder="Search" onChange={this.handleInput} name="searchTerm" />
-        </header>
+        <Header showSearch handleSearchTermChange={this.handleSearchTermChange} searchTerm={this.state.searchTerm} />
         <div>
           {this.props.shows
             .filter(
