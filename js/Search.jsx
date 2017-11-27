@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import ShowCard from './ShowCard';
 import Header from './Header';
 
+// eslint-disable-next-line
 const Search = (props: { searchTerm: string, shows: Array<Show> }) => (
   <div className="search">
     <Header showSearch />
