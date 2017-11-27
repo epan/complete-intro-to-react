@@ -1,8 +1,24 @@
 // @flow
-import { SET_SEARCH_TERM } from './actions';
+import axios from 'axios';
+import { SET_SEARCH_TERM, ADD_API_DATA } from './actions';
 
 export function setSearchTerm(searchTerm: string) {
   return { type: SET_SEARCH_TERM, payload: searchTerm };
 }
 
-export { setSearchTerm as default };
+export function addAPIData(apiData: Show) {
+  return { type: ADD_API_DATA, payload: apiData };
+}
+
+export function getAPIDetails(imdbID: string) {
+  return (dispatch: Function) => {
+    axios
+      .get(`http://localhost:3000/${imdbID}`)
+      .then(({ data }) => {
+        dispatch(addAPIData(data));
+      })
+      .catch(err => {
+        console.error('axios error', err); // eslint-disable-line no-console
+      });
+  };
+}

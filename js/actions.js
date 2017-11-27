@@ -1,4 +1,3 @@
 // @flow
 export const SET_SEARCH_TERM = 'SET_SEARCH_TERM';
-
-export { SET_SEARCH_TERM as default };
+export const ADD_API_DATA = 'ADD_API_DATA';
